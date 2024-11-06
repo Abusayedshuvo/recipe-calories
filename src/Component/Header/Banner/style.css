@@ -1,0 +1,6 @@
+.bg-banner {
+  background-image: url(../../../assets/img/banner-img.png);
+  position: relative;
+  display: flex;
+  height: 80vh;
+}
