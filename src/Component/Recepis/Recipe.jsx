@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
 import { CiClock2 } from "react-icons/ci";
 import { FaFire } from "react-icons/fa";
+import { CookiesContext } from "./Recepis";
 
 const Recipe = ({ recipe }) => {
+  const [cookies, setCookies] = useContext(CookiesContext);
   const {
     recipe_id,
     recipe_name,
@@ -12,14 +15,13 @@ const Recipe = ({ recipe }) => {
     calories,
     recipe_image,
   } = recipe;
-  console.log(ingredients);
+
   return (
     <div>
       <div className="border-2  rounded-xl py-5">
         <img className="mx-auto" src={recipe_image} alt="" />
 
         <div className="pt-5 px-10">
-          <p className="font-bold pb-2">Id : {recipe_id}</p>
           <h4 className="text-xl font-bold">{recipe_name}</h4>
           <p className="pt-2 pb-5">{short_description}</p>
           <hr />
@@ -40,7 +42,12 @@ const Recipe = ({ recipe }) => {
             </p>
           </div>
           <div className="pt-5">
-            <button className="bg-[#0BE58A] py-2 px-3 font-bold rounded-md ">
+            <button
+              onClick={() =>
+                setCookies((prevCookies) => [...prevCookies, recipe_id])
+              }
+              className="bg-[#0BE58A] py-3 px-6 font-bold rounded-full "
+            >
               Want to Cook
             </button>
           </div>
@@ -52,6 +59,7 @@ const Recipe = ({ recipe }) => {
 
 Recipe.propTypes = {
   recipe: PropTypes.object,
+  handleId: PropTypes.func,
 };
 
 export default Recipe;

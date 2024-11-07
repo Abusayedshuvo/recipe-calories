@@ -16,11 +16,11 @@ const Banner = () => {
             well world-class Programmer.
           </p>
           <div className="pt-5">
-            <button className="bg-[#0BE58A] py-3 px-5 font-bold text-[16px] text-black rounded-full mr-5">
+            <button className="bg-[#0BE58A] py-3 px-8 font-bold text-[16px] text-black rounded-full mr-5">
               Explore Now
             </button>
-            <button className="bg-transparent border-2 border-white text-white py-3 px-5 font-bold text-[16px] rounded-full ">
-              Explore Now
+            <button className="bg-transparent border-2 border-white text-white py-3 px-8 font-bold text-[16px] rounded-full ">
+              Our Feedback
             </button>
           </div>
         </div>
