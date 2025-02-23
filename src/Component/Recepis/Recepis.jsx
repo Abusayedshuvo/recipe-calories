@@ -22,7 +22,7 @@ const Service = () => {
   };
   return (
     <div className="my-10 py-10 xl:px-32 px-5 ">
-      <div className="text-center w-2/3 mx-auto">
+      <div className="text-center w-full lg:w-2/3 mx-auto">
         <h2 className="text-3xl font-bold">Our Recipes</h2>
         <p className="pt-5">
           Discover simple, step-by-step recipes for every occasion, perfect for
@@ -32,15 +32,15 @@ const Service = () => {
       </div>
       <CookiesContext.Provider value={[cookies, setCookies]}>
         <ReceiptsContext.Provider value={[recepis, setRecepis]}>
-          <div className="grid grid-cols-12 gap-6 pt-20">
-            <div className="col-span-7">
-              <div className="grid grid-cols-2 gap-5">
+          <div className="grid  grid-cols-12 gap-6 pt-20">
+            <div className="col-span-12 lg:col-span-7">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                 {recepis.map((recipe) => (
                   <Recipe key={recipe.recipe_id} recipe={recipe}></Recipe>
                 ))}
               </div>
             </div>
-            <div className="col-span-5">
+            <div className="col-span-12 lg:col-span-5">
               <div className="border rounded-2xl py-8">
                 <CookTable
                   handleCurrentlyCook={handleCurrentlyCook}

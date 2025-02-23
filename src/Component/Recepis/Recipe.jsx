@@ -18,7 +18,7 @@ const Recipe = ({ recipe }) => {
 
   return (
     <div>
-      <div className="border-2  rounded-xl py-5">
+      <div className="border-2  rounded-xl lg:pt-5 pb-5 ">
         <img className="mx-auto" src={recipe_image} alt="" />
 
         <div className="pt-5 px-10">
